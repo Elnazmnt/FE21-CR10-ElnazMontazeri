@@ -3,7 +3,7 @@ require_once "db_connect.php";
 require_once  "file_upload.php";
 
 if ($_POST) { 
-$Id = $_POST['Id'];
+$id = $_POST['Id'];
 $type = $_POST['type'];
 $title = $_POST['title'];
 $author_first_name = $_POST['author_first_name'];
@@ -13,11 +13,11 @@ $uploadError = '';
 $image =file_upload($_FILES['image']);
 if($image->error===0){
     ($_POST["image"]=="book.png")?: unlink("../pictures/$_POST[image]");           
-    $sql = "UPDATE library SET type = '$type', title = '$title', short_description = '$short_description', image = '$image->fileName' ,ISBN_code = $ISBN_code,author_first_name = '$author_first_name', author_last_name = '$author_last_name', publisher_name = '$publisher_name', publisher_address = '$publisher_address',publish_date = '$publish_date',status = '$status' WHERE Id = {$Id}";
+    $sql = "UPDATE library SET type = '$type', title = '$title', short_description = '$short_description', image = '$image->fileName' ,ISBN_code = $ISBN_code,author_first_name = '$author_first_name', author_last_name = '$author_last_name', publisher_name = '$publisher_name', publisher_address = '$publisher_address',publish_date = '$publish_date',status = '$status' WHERE id = {$Id}";
  
 
 }else{
-    $sql = "UPDATE library SET  type = '$type', title = '$title', short_description = '$short_description',ISBN_code = $ISBN_code,author_first_name = '$author_first_name', author_last_name = '$author_last_name', publisher_name = '$publisher_name', publisher_address = '$publisher_address',publish_date = '$publish_date',status = '$status' WHERE Id = {$Id}";
+    $sql = "UPDATE library SET  type = '$type', title = '$title', short_description = '$short_description',ISBN_code = $ISBN_code,author_first_name = '$author_first_name', author_last_name = '$author_last_name', publisher_name = '$publisher_name', publisher_address = '$publisher_address',publish_date = '$publish_date',status = '$status' WHERE id = {$Id}";
 }    
 if (mysqli_query($connect, $sql) === TRUE) {
     $class = "success";

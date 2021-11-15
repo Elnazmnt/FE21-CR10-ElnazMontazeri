@@ -30,11 +30,12 @@ if (mysqli_query($connect, $sql)=== true){
     </tr>
         <tr>
        
-        <td> $type </td>
+        <td>  $type </td>
         <td> $title </td>
         <td> $author_first_name </td>
         <td> $author_last_name </td>
         <td> $status </td>
+       
         </tr></table><hr>";
 
         
