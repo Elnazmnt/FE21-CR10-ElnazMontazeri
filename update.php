@@ -54,7 +54,7 @@ if ($_GET["id"]) {
 
     <!-- start form -->
     <div class="mt-3  p-2 text-dark bg-opacity-50" style="background-color:#fd9a7e ;opacity:0.8;">
-        <form action="actions/a_create.php" method="post" enctype="multipart/form-data">
+        <form action="actions/a_uplode.php" method="post" enctype="multipart/form-data">
             <div class="col-md-4 ">
                 <label for="validationCustom01" class="form-label mt-2 fs-3" >Please chocse type of Itam:</label>
                 <!-- <input type="text" class="form-control" name="type" id="validationCustom01" value="<?php echo $data['type'] ?>"required> -->
@@ -64,6 +64,7 @@ if ($_GET["id"]) {
                     <option value="1">Book</option>
                     <option value="2">CD</option>
                     <option value="3">DVD</option>
+                    
                 </select>
             </div>
        
